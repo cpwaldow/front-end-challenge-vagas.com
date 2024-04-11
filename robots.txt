@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.example.com/sitemap.xml
+
+Allow: /index.html
+Allow: /style.css
+Allow: /index.js
