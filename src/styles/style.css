@@ -50,7 +50,7 @@ body {
 }
 
 .header {
-  background: url("../../images/header.png") center right no-repeat;
+  background: url("../../images/header.webp") center right no-repeat;
   background-size: cover;
   height: 187px;
   padding: 23px 36px;
