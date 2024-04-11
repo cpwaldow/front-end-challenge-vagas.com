@@ -91,7 +91,13 @@ body {
 }
 
 input[type=checkbox] {
-  accent-color: var(--primary);;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.btn-menos , .btn-mais {
+  border: none;
+  cursor: pointer;
 }
 
 .counter {
