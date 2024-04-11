@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "npx eslint *.js ",
-    "eslint": "npx stylelint *.css",
+    "stylelint": "npx stylelint *.css",
     "deploy": "npm run build && vercel --prod",
     "test": "cypress run",
     "cypress:open": "cypress open"

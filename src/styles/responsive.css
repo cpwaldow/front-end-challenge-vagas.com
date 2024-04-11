@@ -1,4 +1,4 @@
-@media only screen and (max-width: 549px) {
+@media (width <= 549px) {
   .box {
     width: 90%;
   }
