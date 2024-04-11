@@ -1,5 +1,9 @@
 # DESAFIO VAGAS.COM
 
+Neste projeto, foram utilizadas as seguintes ferramentas:
+
+[![tools](https://skillicons.dev/icons?i=vite,js,html,css,cypress,git,github)](https://skillicons.dev)
+
 ## Pré-Requisitos
 
 Versão mínima Node: `V18.19.0`. [Instalação Node](https://nodejs.org/en)
