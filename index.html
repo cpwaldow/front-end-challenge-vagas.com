@@ -15,35 +15,35 @@
       <h1 class="title">Formulário<br />para compra de<br /><span>Pacote de Stickers</span></h1>
     </header>
 
-    <form class="form">
-      <fieldset class="fieldset space-md">
-        <h2 class="label">Quais stickers:</h2>
+    <form class="form" aria-label="Formulário para selecionar stickers">
+      <fieldset class="fieldset space-md" aria-label="Selecione stickers desejáveis">
+        <legend class="label">Quais stickers:</legend>
         <label><input type="checkbox" class="checkbox" /> React</label>
         <label><input type="checkbox" /> Vue</label>
         <label><input type="checkbox" /> Angular</label>
       </fieldset>
-      <fieldset class="fieldset">
-        <h2 class="label space">Quantos stickers de cada?</h2>
+      <fieldset class="fieldset" aria-label="Selecione a quantidade de cada stickers">
+        <legend class="label space">Quantos stickers de cada?</legend>
         <section class="counter space-md">
-          <button class="btn-menos">
+          <button class="btn-menos" aria-label="Diminuir quantidade">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
               <path d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z" />
             </svg>
           </button>
-          <input type="text" value="0" id="counter" class="input-counter" />
-          <button class="btn-mais">
+          <input type="text" value="0" id="counter" class="input-counter" name="counter" aria-label="quantidade de stickers" />
+          <button class="btn-mais" aria-label="Aumentar quantidade">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42">
               <path d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z" />
             </svg>
           </button>
         </section>
       </fieldset>
-      <fieldset class="fieldset space-md">
-        <h3 class="label space">Observações:</h3>
-        <textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
+      <fieldset class="fieldset space-md" aria-label="Observações">
+        <legend class="label space">Observações:</legend>
+        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" name="descricao" aria-label="Alguma dúvida? Recado?"></textarea>
       </fieldset>
       <footer class="footer">
-        <button type="submit" id="btn-submit">Enviar</button>
+        <button type="submit" id="btn-submit" aria-label="Enviar">Enviar</button>
       </footer>
     </form>
   </div>
