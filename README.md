@@ -48,7 +48,7 @@ npm test
 npm run cypress:open
 ```
 
-⚠️ Para conseguir executar os testes, é necessário que o servidor esteja rodando junto, basta rodar o comando do [passo anterior](##executando-o-projeto-localmente)
+⚠️ Para conseguir executar os testes, é necessário que o servidor esteja rodando junto, basta rodar o comando do passo anterior: `npm run dev`
 
 ### Arquivos de testes
 
