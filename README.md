@@ -1,28 +1,66 @@
-# Desafio Front-end VAGAS.com
+# DESAFIO VAGAS.COM
 
-Seja bem-vindo, tripulante!
+## Pré-Requisitos
 
-Este repositório é minha resolução do desafio Front-end para VAGAS.com, você pode ter acesso ao repositório original [clicando aqui](https://github.com/VAGAScom/front-end-challenge).
+Versão mínima Node: `V18.19.0`. [Instalação Node](https://nodejs.org/en)
 
-## Stack
+## Instalação
 
-Este projeto utiliza [Vite](https://vitejs.dev/) como bundler, com JavaScript Vanilla, HTML e CSS.
+1. Clone o repositório:
 
-## Rodando o projeto localmente
-
-Você precisa ter o node instalado no seu computador, e que tenha pelo menos a versão 18. Para verificar se existe o node no seu computador, pode rodar o comando `node --help`. Para verificar a versão do node, utilize o comando `node --version`, o retorno deverá ser algo similar a isto: `v18.19.0`.
-
-Depois de verificar o node, basta clonar o projeto, adentrá-lo e instalar as dependências:
-
-```shell
- git clone git@github.com:cpwaldow/front-end-challenge-vagas.com.git
-
- cd front-end-challenge-vagas.com
-
- npm i
+```bash
+git clone git@github.com:cpwaldow/front-end-challenge-vagas.com.git
 ```
 
-Depois de executar todos os passo acima, basta rodar o comando `npm run dev` para ter acesso à aplicação no localhost.
+2. Navegue até o repositório do projeto:
+
+```bash
+cd front-end-challenge-vagas.com
+```
+
+3. Instale as dependências usando o npm:
+
+```bash
+npm install
+```
+
+## Executando o projeto localmente
+
+Para executar o projeto localmente é preciso rodar o comando:
+
+```bash
+npm run dev
+```
+
+## Executando Testes
+
+Para executar os testes, você pode utilizar os seguintes comandos:
+
+- Modo de Teste de Headless (execução rápida):
+
+```bash
+npm test
+```
+
+- Modo de Teste Interativo (Cypress Open):
+
+```bash
+npm run cypress:open
+```
+
+⚠️ Para conseguir executar os testes, é necessário que o servidor esteja rodando junto, basta rodar o comando do [passo anterior](##executando-o-projeto-localmente)
+
+### Arquivos de testes
+
+Os testes se encontram dentro do diretório `./cypress/e2e/`
+
+## Deploy
+
+Esse projeto está hospedado na [Vercel](https://vercel.com/) e o deploy é feito via CLI (Command-Line Interface) com o comando
+
+```bash
+npm run deploy
+```
 
 ## Boas práticas
 
@@ -36,13 +74,3 @@ Este projeto possui Eslint e Stylelint configurados já com scripts configurados
 
 - `npm run lint`
 - `npm run stylelint`
-
-## Deploy
-
-Esse projeto está hospedado na [Vercel](https://vercel.com/) e o deploy é feito via CLI (Command-Line Interface) com o comando
-
-```shell
-npm run deploy
-```
-
-Esse script já possui o build do projeto como passo antes do deploy ocorrer, garantindo que não há necessidade de fazer o build manualmente para realizar o processo de deploy.
