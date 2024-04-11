@@ -36,3 +36,13 @@ Este projeto possui Eslint e Stylelint configurados já com scripts configurados
 
 - `npm run lint`
 - `npm run stylelint`
+
+## Deploy
+
+Esse projeto está hospedado na [Vercel](https://vercel.com/) e o deploy é feito via CLI (Command-Line Interface) com o comando
+
+```shell
+npm run deploy
+```
+
+Esse script já possui o build do projeto como passo antes do deploy ocorrer, garantindo que não há necessidade de fazer o build manualmente para realizar o processo de deploy.
