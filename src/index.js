@@ -39,19 +39,17 @@ const handleBtnMore = () => {
 };
 
 const handleErrors = () => {
-  if (Number(counterInput.value) === 0) {
-    alert('O valor do input não pode ser 0');
-    counterInput.classList.add('input-error');
-    throw new Error('O valor do input não pode ser 0');
-  }
-
   const validateStickers = Array.from(stickersInput).some(
     (sticker) => sticker.checked,
   );
 
   if (!validateStickers) {
-    alert('Selecione pelo menos uma opção de adesivo');
     throw new Error('Selecione pelo menos uma opção de adesivo');
+  }
+
+  if (Number(counterInput.value) === 0 || isNaN(Number(counterInput.value))) {
+    counterInput.classList.add('input-error');
+    throw new Error('Valor incorreto, insira um número válido maior que 0');
   }
 };
 
@@ -78,7 +76,6 @@ const handleSubmitForm = () => {
       const inputsChecked = Array.from(
         document.querySelectorAll('.checkbox:checked'),
       ).map((item) => item.value);
-
       addStorageInfo({
         stickers: inputsChecked,
         counter: counterInput.value,
@@ -86,7 +83,7 @@ const handleSubmitForm = () => {
       });
       successMsg.classList.remove('invisible');
     } catch (error) {
-      console.error(error.message);
+      alert(error.message);
     }
   });
 };
