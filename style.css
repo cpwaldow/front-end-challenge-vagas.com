@@ -1,8 +1,8 @@
 :root {
-  --primary: #2f3676;
-  --secondary: #dde3e9;
-  --tertiary: #071723;
-  --quaternary: #f2f2f2;
+  --main-bg-black: #071723;
+  --main-bg-blue: #2f3676;
+  --main-bg-white: #dde3e9;
+  --secondary-bg-white: #f2f2f2;
 }
 
 @import url("https://rsms.me/inter/inter.css");
@@ -25,11 +25,11 @@ html {
 
 body {
   background: rebeccapurple;
-  color: var(--tertiary);
+  color: var(--main-bg-black);
 }
 
 .box {
-  background-color: var(--quaternary);
+  background-color: var(--secondary-bg-white);
   border-radius: 8px;
   box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
   margin: 20px auto;
@@ -71,10 +71,10 @@ body {
 }
 
 .form textarea {
-  background: var(--secondary);
-  border: 1px solid var(--primary);
+  background: var(--main-bg-white);
+  border: 1px solid var(--main-bg-blue);
   border-radius: 8px;
-  color: var(--tertiary);
+  color: var(--main-bg-black);
   height: 140px;
   padding: 16px;
   resize: none;
@@ -91,7 +91,7 @@ body {
 }
 
 input[type=checkbox] {
-  accent-color: var(--primary);
+  accent-color: var(--main-bg-blue);
   cursor: pointer;
 }
 
@@ -106,12 +106,12 @@ input[type=checkbox] {
 }
 
 .counter svg {
-  fill: var(--primary);
+  fill: var(--main-bg-blue);
 }
 
-.counter input {
-  background: var(--secondary);
-  border: 1px solid var(--primary);
+.input-counter {
+  background: var(--main-bg-white);
+  border: 1px solid var(--main-bg-blue);
   border-radius: 7px;
   font-size: 20px;
   font-weight: bold;
@@ -121,16 +121,22 @@ input[type=checkbox] {
   padding: 10px;
 }
 
+.input-error {
+  background-color: rgb(250, 139, 139);
+  border: 1px solid rgb(255, 47, 47);
+  color: var(--main-bg-black);
+}
+
 .footer {
   padding: 32px;
-  background: var(--secondary);
+  background: var(--main-bg-white);
   display: flex;
   justify-content: flex-end;
 }
 
-.footer button {
+#btn-submit {
   appearance: none;
-  background: var(--primary);
+  background: var(--main-bg-blue);
   border: 0;
   border-radius: 8px;
   color: #fff;
@@ -141,8 +147,8 @@ input[type=checkbox] {
   padding: 8px 32px;
 }
 
-.footer button:focus,
-.footer button:hover {
-  border: 2px solid var(--primary);
-  background: #191847;
+.input-error {
+  background-color: rgb(250, 139, 139);
+  border: 1px solid rgb(255, 47, 47);
+  color: var(--main-bg-black);
 }
