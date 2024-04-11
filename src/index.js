@@ -10,6 +10,7 @@ const handleInputChange = () => {
       counterInput.classList.add('input-error');
       return;
     }
+    counterInput.classList.remove('input-error');
   });
 };
 
