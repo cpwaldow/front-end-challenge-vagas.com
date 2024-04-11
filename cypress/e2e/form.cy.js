@@ -1,12 +1,13 @@
 describe('Submit Form', () => {
   beforeEach(() => {
     cy.clearLocalStorage();
+    cy.visit('http://localhost:5173/');
   });
 
   it('Select React option with 50 qnt', () => {
     const storage =
       '[{"stickers":["React"],"counter":"50","obs":"Selecionando 50 React stickers"}]';
-    cy.visit('http://localhost:5173/');
+
     cy.contains('React').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('50');
@@ -28,7 +29,7 @@ describe('Submit Form', () => {
 
   it('Select Vue option with 100 qnt', () => {
     const storage = '[{"stickers":["Vue"],"counter":"100","obs":""}]';
-    cy.visit('http://localhost:5173/');
+
     cy.contains('Vue').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('100');
@@ -49,7 +50,7 @@ describe('Submit Form', () => {
 
   it('Select Angular option with 35 qnt', () => {
     const storage = '[{"stickers":["Angular"],"counter":"35","obs":""}]';
-    cy.visit('http://localhost:5173/');
+
     cy.contains('Angular').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('35');
@@ -66,5 +67,57 @@ describe('Submit Form', () => {
 
     cy.wait(5000);
     cy.get('.success-submit').should('not.be.visible');
+  });
+});
+
+describe('Handle erros on form', () => {
+  it('Select React option with 0 qnt', () => {
+    cy.on('window:alert', (msg) => {
+      const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
+      expect(msg).to.equal(alertMsg);
+    });
+    cy.visit('http://localhost:5173/');
+    cy.contains('React').click();
+    cy.get('#counter').clear();
+    cy.get('#counter').focus().type('0');
+    cy.get('#btn-submit').click();
+  });
+
+  it('Select Vue option with 0 qnt', () => {
+    cy.on('window:alert', (msg) => {
+      const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
+      expect(msg).to.equal(alertMsg);
+    });
+    cy.visit('http://localhost:5173/');
+    cy.contains('Vue').click();
+    cy.get('#counter').clear();
+    cy.get('#counter').focus().type('0');
+    cy.get('#btn-submit').click();
+  });
+
+  it('Select Angular option with 0 qnt', () => {
+    cy.on('window:alert', (msg) => {
+      const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
+      expect(msg).to.equal(alertMsg);
+    });
+    cy.visit('http://localhost:5173/');
+    cy.contains('Angular').click();
+    cy.get('#counter').clear();
+    cy.get('#counter').focus().type('0');
+    cy.get('#btn-submit').click();
+  });
+
+  it('Select all option with 0 qnt', () => {
+    cy.on('window:alert', (msg) => {
+      const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
+      expect(msg).to.equal(alertMsg);
+    });
+    cy.visit('http://localhost:5173/');
+    cy.contains('React').click();
+    cy.contains('Vue').click();
+    cy.contains('Angular').click();
+    cy.get('#counter').clear();
+    cy.get('#counter').focus().type('0');
+    cy.get('#btn-submit').click();
   });
 });
