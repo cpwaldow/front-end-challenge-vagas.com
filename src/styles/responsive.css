@@ -1,0 +1,30 @@
+@media only screen and (max-width: 549px) {
+  .box {
+    width: 90%;
+  }
+
+  .label-select-stickers {
+    font-size: 1.5rem;
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form textarea {
+    font-size: 16px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .success-submit {
+    font-size: 1.5rem;
+  }
+
+  #btn-submit {
+    padding: 1.2rem;
+  }
+}
