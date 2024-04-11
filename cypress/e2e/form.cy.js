@@ -70,13 +70,17 @@ describe('Submit Form', () => {
   });
 });
 
-describe('Handle erros on form', () => {
+describe('Handle erros on form with qnt stickers 0', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:5173/');
+  });
+
   it('Select React option with 0 qnt', () => {
     cy.on('window:alert', (msg) => {
       const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
       expect(msg).to.equal(alertMsg);
     });
-    cy.visit('http://localhost:5173/');
+
     cy.contains('React').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('0');
@@ -88,7 +92,7 @@ describe('Handle erros on form', () => {
       const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
       expect(msg).to.equal(alertMsg);
     });
-    cy.visit('http://localhost:5173/');
+
     cy.contains('Vue').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('0');
@@ -100,7 +104,7 @@ describe('Handle erros on form', () => {
       const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
       expect(msg).to.equal(alertMsg);
     });
-    cy.visit('http://localhost:5173/');
+
     cy.contains('Angular').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('0');
@@ -112,12 +116,22 @@ describe('Handle erros on form', () => {
       const alertMsg = 'Valor incorreto, insira um número válido maior que 0';
       expect(msg).to.equal(alertMsg);
     });
-    cy.visit('http://localhost:5173/');
+
     cy.contains('React').click();
     cy.contains('Vue').click();
     cy.contains('Angular').click();
     cy.get('#counter').clear();
     cy.get('#counter').focus().type('0');
+    cy.get('#btn-submit').click();
+  });
+
+  it('Set qnt stickers without select any option', () => {
+    cy.on('window:alert', (msg) => {
+      const alertMsg = 'Selecione pelo menos uma opção de adesivo';
+      expect(msg).to.equal(alertMsg);
+    });
+
+    cy.get('#counter').focus().type('100');
     cy.get('#btn-submit').click();
   });
 });
