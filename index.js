@@ -1,5 +1,7 @@
 const counterInput = document.querySelector('#counter');
 const stickersInput = document.querySelectorAll('.checkbox');
+const textArea = document.querySelector('textarea');
+const successMsg = document.querySelector('.success-submit');
 
 const handleInputChange = () => {
   counterInput.addEventListener('input', () => {
@@ -53,6 +55,20 @@ const handleErrors = () => {
   }
 };
 
+const createStorage = () => {
+  if (!localStorage.getItem('info')) {
+    localStorage.setItem('info', JSON.stringify([]));
+  }
+};
+
+const addStorageInfo = (getAllInfo) => {
+  const storageInfo = JSON.parse(localStorage.getItem('info'));
+  localStorage.setItem('info', JSON.stringify([...storageInfo, getAllInfo]));
+  setTimeout(() => {
+    window.location.reload();
+  }, 4000);
+};
+
 const handleSubmitForm = () => {
   const btnSubmit = document.querySelector('#btn-submit');
   btnSubmit.addEventListener('click', (e) => {
@@ -61,8 +77,14 @@ const handleSubmitForm = () => {
       handleErrors();
       const inputsChecked = Array.from(
         document.querySelectorAll('.checkbox:checked'),
-      );
-      console.log(inputsChecked);
+      ).map((item) => item.value);
+
+      addStorageInfo({
+        stickers: inputsChecked,
+        counter: counterInput.value,
+        obs: textArea.value,
+      });
+      successMsg.classList.remove('invisible');
     } catch (error) {
       console.error(error.message);
     }
@@ -70,6 +92,7 @@ const handleSubmitForm = () => {
 };
 
 window.onload = () => {
+  createStorage();
   handleInputChange();
   handleBtnLess();
   handleBtnMore();
