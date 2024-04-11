@@ -131,7 +131,16 @@ input[type=checkbox] {
   padding: 32px;
   background: var(--main-bg-white);
   display: flex;
+  gap: 30px;
   justify-content: flex-end;
+}
+
+.success-submit {
+  color: rgb(0, 195, 94);
+}
+
+.invisible {
+  display: none;
 }
 
 #btn-submit {
