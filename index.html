@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="./src/styles/style.css">
+  <link rel="stylesheet" href="./src/styles/responsive.css">
 </head>
 
 <body>
@@ -20,9 +21,9 @@
     <form class="form" aria-label="Formulário para selecionar stickers">
       <fieldset class="fieldset space-md" aria-label="Selecione stickers desejáveis">
         <legend class="label space">Quais stickers:</legend>
-        <label><input type="checkbox" class="checkbox" value="React" /> React</label>
-        <label><input type="checkbox" class="checkbox" value="Vue" /> Vue</label>
-        <label><input type="checkbox" class="checkbox" value="Angular" /> Angular</label>
+        <label class="label-select-stickers"><input type="checkbox" class="checkbox" value="React" /> React</label>
+        <label class="label-select-stickers"><input type="checkbox" class="checkbox" value="Vue" /> Vue</label>
+        <label class="label-select-stickers"><input type="checkbox" class="checkbox" value="Angular" /> Angular</label>
       </fieldset>
       <fieldset class="fieldset" aria-label="Selecione a quantidade de cada stickers">
         <legend class="label space">Quantos stickers de cada?</legend>
@@ -42,7 +43,7 @@
       </fieldset>
       <fieldset class="fieldset space-md" aria-label="Observações">
         <legend class="label space">Observações:</legend>
-        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" name="descricao" aria-label="Alguma dúvida? Recado?"></textarea>
+        <textarea name="descricao" placeholder="Alguma dúvida? Recado?" aria-label="Alguma dúvida? Recado?"></textarea>
       </fieldset>
       <footer class="footer">
         <h3 class="success-submit invisible">Formulário enviado com sucesso!</h3>
