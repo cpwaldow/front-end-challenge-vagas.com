@@ -1,7 +1,7 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://front-end-challenge-vagas-com.vercel.app/
 
 Allow: /index.html
 Allow: /style.css
