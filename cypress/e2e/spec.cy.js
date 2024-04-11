@@ -21,6 +21,9 @@ describe('Submit Form', () => {
         },
       });
     });
+
+    cy.wait(5000);
+    cy.get('.success-submit').should('not.be.visible');
   });
 
   it('Select Vue option with 100 qnt', () => {
@@ -39,5 +42,29 @@ describe('Submit Form', () => {
         },
       });
     });
+
+    cy.wait(5000);
+    cy.get('.success-submit').should('not.be.visible');
+  });
+
+  it('Select Angular option with 35 qnt', () => {
+    const storage = '[{"stickers":["Angular"],"counter":"35","obs":""}]';
+    cy.visit('http://localhost:5173/');
+    cy.contains('Angular').click();
+    cy.get('#counter').clear();
+    cy.get('#counter').focus().type('35');
+    cy.get('#btn-submit').click();
+    cy.get('.success-submit').should('be.visible');
+
+    cy.getAllLocalStorage().then((result) => {
+      expect(result).to.deep.equal({
+        'http://localhost:5173': {
+          info: storage,
+        },
+      });
+    });
+
+    cy.wait(5000);
+    cy.get('.success-submit').should('not.be.visible');
   });
 });
