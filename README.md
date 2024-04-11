@@ -23,3 +23,16 @@ Depois de verificar o node, basta clonar o projeto, adentrá-lo e instalar as de
 ```
 
 Depois de executar todos os passo acima, basta rodar o comando `npm run dev` para ter acesso à aplicação no localhost.
+
+## Boas práticas
+
+### Commits
+
+Para realizar commits neste projeto, há a necessidade de seguir a padronização do [git-commit-msg-linter](https://github.com/legend80s/git-commit-msg-linter)
+
+### Lint
+
+Este projeto possui Eslint e Stylelint configurados já com scripts configurados, use os seguintes comandos:
+
+- `npm run lint`
+- `npm run stylelint`
