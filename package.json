@@ -23,6 +23,7 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "git-commit-msg-linter": "^5.0.7"
+    "git-commit-msg-linter": "^5.0.7",
+    "sweetalert2": "^11.10.7"
   }
 }
