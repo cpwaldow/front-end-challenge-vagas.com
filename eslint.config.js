@@ -13,6 +13,7 @@ export default [
       semi: 'error',
     },
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    ignores: ['node_modules/', 'dist/', 'cypress/**', 'cypress.config.js'],
   },
 ];
 
