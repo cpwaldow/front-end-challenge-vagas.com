@@ -28,5 +28,7 @@ jobs:
     - run: npm install
     - run: npm run lint
     - run: npm run stylelint
-    - run: npm run dev
-    - run: npm test
+    - name: Start Vite server
+      run: npm run dev &
+    - name: Run tests
+      run: npm test
