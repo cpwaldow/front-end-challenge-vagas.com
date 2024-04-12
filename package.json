@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "npx eslint *.js ",
-    "stylelint": "npx stylelint *.css",
+    "stylelint": "npx stylelint '**/*.css'",
     "deploy": "npm run build && vercel --prod",
     "test": "cypress run",
     "cypress:open": "cypress open"
