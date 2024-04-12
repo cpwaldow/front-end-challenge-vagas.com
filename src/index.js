@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const counterInput = document.querySelector('#counter');
 const stickersInput = document.querySelectorAll('.checkbox');
 const textArea = document.querySelector('textarea');
@@ -84,7 +86,11 @@ const handleSubmitForm = () => {
       });
       successMsg.classList.remove('invisible');
     } catch (error) {
-      alert(error.message);
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro ao enviar formulário',
+        text: error.message,
+      });
     }
   });
 };
