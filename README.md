@@ -60,11 +60,13 @@ Os testes se encontram dentro do diretório `./cypress/e2e/`
 
 ## Deploy
 
-Esse projeto está hospedado na [Vercel](https://vercel.com/) e o deploy é feito via CLI (Command-Line Interface) com o comando
+Esse projeto está hospedado na [Vercel](https://vercel.com/) e o deploy é feito via CLI (Command-Line Interface) com o comando:
 
 ```bash
 npm run deploy
 ```
+
+Obs: O script de deploy tem o build do projeto, garantindo que apenas um comando execute o processo de build e ao final realiza o deploy em produção.
 
 ## Boas práticas
 
