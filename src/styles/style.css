@@ -99,6 +99,17 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+#counter::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+}
+
+
+#counter { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+}
+
 .counter {
   display: flex;
   align-items: center;
